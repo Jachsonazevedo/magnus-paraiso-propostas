@@ -1,0 +1,500 @@
+{
+ "cliente": "Hotel Wall Way · Poços de Caldas-MG",
+ "materiais_total": 349258.9,
+ "mao_de_obra": {
+  "total": 316500,
+  "inclui": [
+   "Criação do conceito e direção artística de Alexandre Magnus",
+   "Supervisão técnica em todas as etapas da obra",
+   "Artesãos especialistas em rocha artística",
+   "Pedreiros e ajudantes",
+   "Eletricista (instalação na casa de máquinas)",
+   "Engenheiro civil responsável",
+   "Administração da obra"
+  ],
+  "parcelas": [
+   [
+    "Na assinatura do contrato (mobilização)",
+    0.35
+   ],
+   [
+    "Com 30 dias, mediante execução",
+    0.35
+   ],
+   [
+    "Na entrega da obra",
+    0.3
+   ]
+  ],
+  "nao_inclui": [
+   "hospedagem, alimentação e transporte da equipe",
+   "materiais e equipamentos"
+  ]
+ },
+ "grupos": [
+  {
+   "grupo": "Elétrica, iluminação e bombas",
+   "itens": [
+    {
+     "desc": "Quadro de comando para bombas, filtros e iluminação subaquática e externa",
+     "un": "Unidade",
+     "qt": 1,
+     "pu": 76000.0
+    },
+    {
+     "desc": "Pontos de iluminação externa e subaquática",
+     "un": "Unidade",
+     "qt": 40,
+     "pu": 550.0
+    },
+    {
+     "desc": "LEDs Caixa de Passagem",
+     "un": "Unidade",
+     "qt": 18,
+     "pu": 170.0
+    },
+    {
+     "desc": "Caixa Especial para Fonte",
+     "un": "Unidade",
+     "qt": 1,
+     "pu": 170.0
+    },
+    {
+     "desc": "Bomba 15 CV",
+     "un": "Unidade",
+     "qt": 1,
+     "pu": 29000.0
+    }
+   ],
+   "total": 130230.0
+  },
+  {
+   "grupo": "Alvenaria e estrutura das rochas",
+   "itens": [
+    {
+     "desc": "Cimento",
+     "un": "Unidade",
+     "qt": 300,
+     "pu": 110.0
+    },
+    {
+     "desc": "Areia lavada média",
+     "un": "M³",
+     "qt": 20,
+     "pu": 110.0
+    },
+    {
+     "desc": "Brita",
+     "un": "M³",
+     "qt": 20,
+     "pu": 140.0
+    },
+    {
+     "desc": "Cimento branco especial",
+     "un": "Unidade",
+     "qt": 20,
+     "pu": 162.0
+    },
+    {
+     "desc": "Blocos de Isopor reciclado 1.000 x 500 x 500",
+     "un": "Unidade",
+     "qt": 300,
+     "pu": 70.0
+    },
+    {
+     "desc": "Pontaletes de Pinos 3.000x 7 x 7",
+     "un": "Unidade",
+     "qt": 80,
+     "pu": null
+    },
+    {
+     "desc": "Concreto usinado",
+     "un": "M³",
+     "qt": 60,
+     "pu": 520.0
+    }
+   ],
+   "total": 93440.0
+  },
+  {
+   "grupo": "Paisagismo e jardinagem",
+   "itens": [
+    {
+     "desc": "Plantas Diversas",
+     "un": "un",
+     "qt": 1,
+     "pu": 40000.0
+    }
+   ],
+   "total": 40000.0
+  },
+  {
+   "grupo": "Ferragens",
+   "itens": [
+    {
+     "desc": "Barras de ferro 12.5",
+     "un": "Unidade",
+     "qt": 100,
+     "pu": 75.8
+    },
+    {
+     "desc": "Barras de ferro 3/8",
+     "un": "Unidade",
+     "qt": 120,
+     "pu": 48.96
+    },
+    {
+     "desc": "Barras de ferro 5/16",
+     "un": "Unidade",
+     "qt": 120,
+     "pu": 33.21
+    },
+    {
+     "desc": "Barras de ferro 5.0",
+     "un": "Unidade",
+     "qt": 180,
+     "pu": 14.0
+    },
+    {
+     "desc": "Peças de malhas pop 3.000x2.000 malha 15x15 4.2",
+     "un": "Unidade",
+     "qt": 140,
+     "pu": 86.3
+    },
+    {
+     "desc": "Peças de malhas pop 3.000x2.000 malha 15x15 3.8",
+     "un": "Unidade",
+     "qt": 60,
+     "pu": 57.5
+    },
+    {
+     "desc": "Treliças h12 de 12 metros",
+     "un": "un",
+     "qt": 24,
+     "pu": 103.0
+    },
+    {
+     "desc": "Arame recozido pg12",
+     "un": "Kg",
+     "qt": 30,
+     "pu": 10.95
+    },
+    {
+     "desc": "Arame recozido torcido",
+     "un": "Kg",
+     "qt": 30,
+     "pu": 10.6
+    },
+    {
+     "desc": "Pregos 18x30",
+     "un": "Kg",
+     "qt": 8,
+     "pu": null
+    },
+    {
+     "desc": "Pregos 18x24",
+     "un": "Kg",
+     "qt": 8,
+     "pu": null
+    },
+    {
+     "desc": "Arame Recozido pg 14",
+     "un": "Kg",
+     "qt": 100,
+     "pu": null
+    },
+    {
+     "desc": "Arame Recozido Torcido",
+     "un": "Kg",
+     "qt": 50,
+     "pu": null
+    },
+    {
+     "desc": "Tela de Viveiro",
+     "un": "Metros",
+     "qt": 300,
+     "pu": null
+    }
+   ],
+   "total": 38610.9
+  },
+  {
+   "grupo": "Hidráulica",
+   "itens": [
+    {
+     "desc": "Tubo PBS DN 200 mm",
+     "un": "Unidade",
+     "qt": 6,
+     "pu": 895.0
+    },
+    {
+     "desc": "Tubo PBS DN 150 mm",
+     "un": "Unidade",
+     "qt": 1,
+     "pu": 630.0
+    },
+    {
+     "desc": "Tubo PBS DN 85 mm",
+     "un": "Unidade",
+     "qt": 4,
+     "pu": 380.0
+    },
+    {
+     "desc": "Tubo PBS DN 25 mm",
+     "un": "Unidade",
+     "qt": 10,
+     "pu": 32.0
+    },
+    {
+     "desc": "Curva longa PBS DN 200 x 90",
+     "un": "Unidade",
+     "qt": 6,
+     "pu": 395.0
+    },
+    {
+     "desc": "Curva longa PBS DN 200 x 45",
+     "un": "Unidade",
+     "qt": 3,
+     "pu": 395.0
+    },
+    {
+     "desc": "Redução 200 x 150",
+     "un": "Unidade",
+     "qt": 1,
+     "pu": 695.0
+    },
+    {
+     "desc": "Flange PBS ANSI DN 200",
+     "un": "Unidade",
+     "qt": 3,
+     "pu": 1280.0
+    },
+    {
+     "desc": "Flange PBS ANSI DN 150",
+     "un": "Unidade",
+     "qt": 1,
+     "pu": 655.0
+    },
+    {
+     "desc": "Te PBS DN 85",
+     "un": "Unidade",
+     "qt": 6,
+     "pu": 98.0
+    },
+    {
+     "desc": "Curva PBS longa 50 x 90",
+     "un": "Unidade",
+     "qt": 20,
+     "pu": 37.0
+    },
+    {
+     "desc": "Curva PBS longa 50 x 45",
+     "un": "Unidade",
+     "qt": 10,
+     "pu": 37.0
+    },
+    {
+     "desc": "Curva PBS longa 25 x 90",
+     "un": "Unidade",
+     "qt": 40,
+     "pu": 6.3
+    },
+    {
+     "desc": "Joelho PBS 50 x 90",
+     "un": "Unidade",
+     "qt": 40,
+     "pu": 8.4
+    },
+    {
+     "desc": "Redução PBS 85 x60",
+     "un": "Unidade",
+     "qt": 8,
+     "pu": 28.0
+    },
+    {
+     "desc": "Registro alavanca borboleta de 8\"",
+     "un": "Unidade",
+     "qt": 1,
+     "pu": 2380.0
+    },
+    {
+     "desc": "Registro PBS 85",
+     "un": "Unidade",
+     "qt": 2,
+     "pu": 330.0
+    },
+    {
+     "desc": "Registro PBS 50",
+     "un": "Unidade",
+     "qt": 12,
+     "pu": 42.0
+    },
+    {
+     "desc": "Adesivo de 850 ml extra forte",
+     "un": "Unidade",
+     "qt": 4,
+     "pu": 98.0
+    }
+   ],
+   "total": 23031.0
+  },
+  {
+   "grupo": "Pintura e impermeabilização",
+   "itens": [
+    {
+     "desc": "Latas de tinta piso Novacor 18 Litros",
+     "un": "Unidade",
+     "qt": 8,
+     "pu": 280.0
+    },
+    {
+     "desc": "Lata de Neutrol base Água 18 litros",
+     "un": "Unidade",
+     "qt": 3,
+     "pu": 280.0
+    },
+    {
+     "desc": "Impermebealizante",
+     "un": "Kg",
+     "qt": 200,
+     "pu": 28.6
+    }
+   ],
+   "total": 8800.0
+  },
+  {
+   "grupo": "Máquinas e equipamentos",
+   "itens": [
+    {
+     "desc": "Retro Escavadeira com acompanhamento do engenheiro",
+     "un": "Horas",
+     "qt": 24,
+     "pu": 280.0
+    },
+    {
+     "desc": "Betoneira - Aluguel diárias",
+     "un": "Mês",
+     "qt": 4,
+     "pu": 450.0
+    }
+   ],
+   "total": 8520.0
+  },
+  {
+   "grupo": "Madeiras e formas",
+   "itens": [
+    {
+     "desc": "Tábuas de 3000x30 pinos",
+     "un": "Unidade",
+     "qt": 30,
+     "pu": 40.0
+    },
+    {
+     "desc": "Tábuas de 3000x25 pinos",
+     "un": "Unidade",
+     "qt": 30,
+     "pu": 28.9
+    },
+    {
+     "desc": "Pontaletes de 3000x7x7",
+     "un": "Unidade",
+     "qt": 40,
+     "pu": 24.0
+    },
+    {
+     "desc": "Chapas zincada bitola 28 largura 100 ou 120",
+     "un": "Metros",
+     "qt": 50,
+     "pu": 72.0
+    }
+   ],
+   "total": 6627.0
+  }
+ ],
+ "total": 665758.9,
+ "cronograma": [
+  {
+   "fase": "Fase 1 · Base e estrutura",
+   "pagamento": "35% na assinatura",
+   "semanas": [
+    [
+     "1",
+     "Mobilização, canteiro, locação e marcação do desenho",
+     "Ferragens, cimento, areia, brita, madeiras e chapas; locação de retroescavadeira e betoneira"
+    ],
+    [
+     "2",
+     "Escavação mecanizada da piscina, cascata e casa de máquinas",
+     ""
+    ],
+    [
+     "3",
+     "Concreto magro e armação das lajes de fundo",
+     "Concreto usinado agendado com a concreteira"
+    ],
+    [
+     "4",
+     "Concretagem das lajes e paredes da piscina e dos patamares",
+     "Tubulação embutida e passagens elétricas"
+    ],
+    [
+     "5",
+     "Estrutura da casa de máquinas, bar molhado e base do mirante",
+     ""
+    ]
+   ]
+  },
+  {
+   "fase": "Fase 2 · As rochas ganham vida",
+   "pagamento": "35% com 30 dias",
+   "semanas": [
+    [
+     "6",
+     "Tubulação hidráulica e eletrodutos; teste de estanqueidade",
+     "Hidráulica completa, impermeabilizante, blocos de isopor reciclado, tela de viveiro"
+    ],
+    [
+     "7",
+     "Impermeabilização e esqueleto metálico das rochas",
+     ""
+    ],
+    [
+     "8",
+     "Volume das rochas e escadaria do mirante",
+     "Cimento branco especial e pigmentos"
+    ],
+    [
+     "9",
+     "Modelagem artística (texturas, fissuras, estratos)",
+     ""
+    ],
+    [
+     "10",
+     "Modelagem final, bordas de transbordo e quiosques de sapê",
+     "Estrutura e sapê dos quiosques"
+    ]
+   ]
+  },
+  {
+   "fase": "Fase 3 · Acabamento e luz",
+   "pagamento": "30% na entrega",
+   "semanas": [
+    [
+     "11",
+     "Pintura artística e pátina; montagem da casa de máquinas",
+     "Bombas, filtro, quadro de comando, luminárias, tintas, plantas e substrato"
+    ],
+    [
+     "12",
+     "Elétrica, iluminação cênica e plantio do paisagismo",
+     ""
+    ],
+    [
+     "13",
+     "Enchimento, testes, ajuste da cortina d'água e da luz, limpeza e entrega",
+     ""
+    ]
+   ]
+  }
+ ]
+}

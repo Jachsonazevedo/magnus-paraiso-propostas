@@ -83,6 +83,40 @@ section[id]{scroll-margin-top:60px}
 .olhar .wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(30px,5vw,70px);align-items:center;width:100%}
 .olhar .para{display:inline-flex;align-items:center;gap:10px;font-size:.72rem;letter-spacing:.26em;text-transform:uppercase;color:var(--ouro-2);font-weight:700}
 .olhar .para::before{content:"";width:30px;height:1px;background:var(--ouro-2)}
+.para-cli{font-size:.86rem;color:#aebbb0;margin-top:8px}
+/* vídeo */
+.video-box{position:relative;max-width:980px;margin:40px auto 0;border-radius:20px;overflow:hidden;box-shadow:0 40px 90px -30px rgba(0,0,0,.7),0 0 0 1px rgba(227,197,120,.25);background:#000}
+.video-box video{width:100%;display:block;aspect-ratio:16/9}
+.video-acoes{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:20px}
+/* tabela de itens */
+.mat details{margin-top:8px}
+.mat summary{cursor:pointer;font-size:.8rem;font-weight:700;color:var(--ouro-esc);list-style:none}
+.mat summary::-webkit-details-marker{display:none}
+.mat summary::before{content:"+ ";font-weight:800}
+.mat details[open] summary::before{content:"− "}
+.itab{width:100%;border-collapse:collapse;margin-top:8px;font-size:.78rem}
+.itab td{padding:5px 4px;border-top:1px solid var(--creme-2);vertical-align:top}
+.itab td:nth-child(2){white-space:nowrap;color:var(--cinza);text-align:right}
+.itab td:last-child{white-space:nowrap;text-align:right;font-weight:600}
+.itab .cotar{color:var(--ouro-esc);font-style:italic;font-weight:600}
+.semanas{margin-top:16px;max-width:100%;overflow-x:auto}
+.stab{table-layout:fixed}.stab th:first-child,.stab td:first-child{width:52px}.stab td{overflow-wrap:anywhere}
+.semanas summary{cursor:pointer;font-weight:700;color:var(--ouro-esc);font-size:.9rem}
+.stab{width:100%;border-collapse:collapse;margin-top:12px;font-size:.84rem}
+.stab th{background:var(--verde);color:var(--creme);text-align:left;padding:8px 10px;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase}
+.stab td{padding:8px 10px;border-bottom:1px solid var(--creme-2);vertical-align:top}
+.stab td:first-child{font-weight:800;color:var(--ouro-esc);white-space:nowrap}
+.stab .fz td{background:var(--creme);font-weight:800;color:var(--verde);white-space:normal;width:auto}
+@media(max-width:640px){.stab td:nth-child(3),.stab th:nth-child(3){display:none}}
+.check li{list-style:none;padding:8px 0 8px 30px;position:relative;border-bottom:1px solid var(--creme-2);font-size:.92rem}
+.check li::before{content:"";position:absolute;left:2px;top:11px;width:16px;height:16px;border:2px solid var(--ouro);border-radius:5px}
+.downloads{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.btn-verde{background:var(--verde);color:var(--creme)}
+.ficha-num{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:22px}
+.ficha-num div{background:rgba(255,255,255,.06);border:1px solid rgba(227,197,120,.25);border-radius:12px;padding:12px}
+.ficha-num b{display:block;font-family:var(--serif);font-size:1.6rem;color:var(--ouro-2);line-height:1.1}
+.ficha-num span{font-size:.76rem;color:#c3cec4}
+@media(max-width:640px){.ficha-num{grid-template-columns:1fr 1fr}}
 .olhar h1{font-size:clamp(2.6rem,5.6vw,4.9rem);margin:.35em 0 .3em;position:relative;min-height:2.2em}
 .olhar h1 span{display:block;transition:opacity .9s ease,transform .9s ease}
 .olhar h1 .f2{position:absolute;inset:0;opacity:0;transform:translateY(14px)}
@@ -280,7 +314,7 @@ section[id]{scroll-margin-top:60px}
 .fase li::before{content:"";position:absolute;left:0;top:11px;width:7px;height:7px;border-radius:50%;background:var(--ouro)}
 @media(max-width:760px){.fases{grid-template-columns:1fr}}
 
-.mats{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.mats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.mat{min-width:0}.itab td:first-child{overflow-wrap:anywhere}
 .mat{display:flex;gap:14px;align-items:flex-start;padding:16px;border-radius:14px;background:var(--creme);border:1px solid var(--creme-2)}
 .mat .ic{width:44px;height:44px;flex:none;border-radius:12px;background:var(--verde);color:var(--ouro-2);display:grid;place-items:center}
 .mat .ic svg{width:24px;height:24px}
@@ -289,7 +323,7 @@ section[id]{scroll-margin-top:60px}
 .mat .peso{margin-top:8px;height:6px;background:var(--creme-2);border-radius:99px;overflow:hidden}
 .mat .peso i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--verde-3),var(--ouro));border-radius:99px;transition:width 1.2s cubic-bezier(.2,.8,.2,1)}
 .mat .val{font-size:.8rem;font-weight:700;color:var(--verde);margin-top:6px;display:block}
-@media(max-width:760px){.mats{grid-template-columns:1fr}}
+@media(max-width:760px){.mats{grid-template-columns:minmax(0,1fr)}.itab td:nth-child(2){white-space:normal}}
 
 .mdo li{list-style:none;display:flex;gap:12px;padding:11px 0;border-bottom:1px solid var(--creme-2);font-size:.95rem}
 .mdo li:last-child{border:0}
@@ -392,7 +426,7 @@ footer b{color:var(--ouro-2);font-family:var(--serif);font-size:1.1rem;letter-sp
       <a href="#outros-projetos" data-v="outros-projetos">Outros Projetos</a>
     </nav>
     <div class="acoes">
-      <a class="btn btn-linha" style="color:var(--creme)" href="Proposta-Hotel-Wall-Way-Magnus-Paraiso.pdf" download><svg><use href="#i-pdf"/></svg>PDF</a>
+      <a class="btn btn-linha" style="color:var(--creme)" href="Proposta-Magnus-Paraiso-Hotel-Wall-Way.pdf" download><svg><use href="#i-pdf"/></svg>PDF</a>
       <a class="btn btn-zap js-zap" href="#" target="_blank" rel="noopener"><svg><use href="#i-zap"/></svg><span class="txt-zap">Falar com Alexandre</span></a>
     </div>
   </div>
@@ -405,7 +439,8 @@ footer b{color:var(--ouro-2);font-family:var(--serif);font-size:1.1rem;letter-sp
   <section class="olhar" id="olhar">
     <div class="wrap">
       <div>
-        <span class="para">Hotel Wall Way · Poços de Caldas</span>
+        <span class="para">Proposta exclusiva · Hotel Wall Way</span>
+        <div class="para-cli">Aos cuidados do Sr. Waldemar Miguel · Poços de Caldas, MG</div>
         <h1><span class="f1">Onde todos viam um terreno vazio…</span><span class="f2">Alexandre Magnus viu <em>um paraíso.</em></span></h1>
         <p class="sub">Esse é o olhar do artista. Diante de um espaço sem vida, ele enxerga cascatas, uma praia, sombra e água cristalina. Enxerga também um hotel que entra em outro nível, com mais hóspedes, ticket maior e uma experiência de que todos vão falar.</p>
         <div class="ctas">
@@ -420,6 +455,20 @@ footer b{color:var(--ouro-2);font-family:var(--serif);font-size:1.1rem;letter-sp
         <span class="etq a">Hoje</span><span class="etq d">O olhar do Alexandre</span>
         <button class="rever" id="rever" type="button">↻ Ver de novo</button>
       </div>
+    </div>
+  </section>
+
+  <!-- 1b. Vídeo -->
+  <section class="dark" style="background:var(--verde-4);padding-top:60px">
+    <div class="wrap">
+      <div class="revela centro">
+        <span class="eyebrow">Assista em 20 segundos</span>
+        <h2>O terreno, o olhar <em>e o paraíso.</em></h2>
+      </div>
+      <div class="video-box revela">
+        <video id="video" src="video/transformacao-wall-way.mp4" poster="video/capa-video.jpg" controls playsinline muted preload="metadata"></video>
+      </div>
+      <div class="video-acoes"><a class="btn btn-linha" style="color:var(--creme)" href="video/transformacao-wall-way.mp4" download><svg><use href="#i-pdf"/></svg>Baixar o vídeo</a></div>
     </div>
   </section>
 
@@ -571,7 +620,13 @@ footer b{color:var(--ouro-2);font-family:var(--serif);font-size:1.1rem;letter-sp
       <div class="revela">
         <span class="eyebrow">Por trás da beleza</span>
         <h2>Arte com <em>projeto de engenharia.</em></h2>
-        <p class="lead">A cascata do Wall Way já tem projeto técnico, com perspectiva, vista frontal, corte lateral, planta baixa e casa de máquinas. As quedas, as alturas e as larguras estão dimensionadas.</p>
+        <p class="lead">A cascata do Wall Way já tem projeto técnico, com perspectiva, vista frontal, corte lateral, planta baixa e casa de máquinas. O engenheiro civil responsável acompanha a obra e emite a ART.</p>
+        <div class="ficha-num">
+          <div><b>3 quedas</b><span>frentes d'água de 3, 6 e 9 m</span></div>
+          <div><b>4,00 m</b><span>altura total do conjunto</span></div>
+          <div><b>40</b><span>pontos de luz subaquática e externa</span></div>
+          <div><b>fck 25</b><span>concreto armado, aço CA-50</span></div>
+        </div>
         <div class="itens">
           <div class="item"><svg><use href="#i-rocha"/></svg><b>Rochas artísticas</b><span>Esculpidas à mão pelos artesãos da Magnus</span></div>
           <div class="item"><svg><use href="#i-agua"/></svg><b>Hidráulica dimensionada</b><span>Bomba de 15 CV, filtros e tubulação PBS</span></div>
@@ -609,7 +664,7 @@ footer b{color:var(--ouro-2);font-family:var(--serif);font-size:1.1rem;letter-sp
       <div class="ctas">
         <a class="btn btn-ouro" href="#planejamento">Planejamento e previsão orçamentária</a>
         <a class="btn btn-zap js-zap" href="#" target="_blank" rel="noopener"><svg><use href="#i-zap"/></svg>Conversar no WhatsApp</a>
-        <a class="btn btn-linha" style="color:var(--creme)" href="Proposta-Hotel-Wall-Way-Magnus-Paraiso.pdf" download><svg><use href="#i-pdf"/></svg>Baixar proposta em PDF</a>
+        <a class="btn btn-linha" style="color:var(--creme)" href="Proposta-Magnus-Paraiso-Hotel-Wall-Way.pdf" download><svg><use href="#i-pdf"/></svg>Baixar proposta em PDF</a>
       </div>
       <span class="validade">Proposta válida por 15 dias</span>
     </div>
@@ -636,6 +691,9 @@ footer b{color:var(--ouro-2);font-family:var(--serif);font-size:1.1rem;letter-sp
         <div class="fase"><span class="m">Mês 2</span><b>As rochas ganham vida</b><ul><li>Escultura das rochas artísticas</li><li>Cascatas e quedas d'água</li><li>Quiosques e bar molhado</li></ul></div>
         <div class="fase"><span class="m">Mês 3</span><b>Acabamento e luz</b><ul><li>Pintura e impermeabilização</li><li>Iluminação e casa de máquinas</li><li>Paisagismo e entrega</li></ul></div>
       </div>
+      <details class="semanas"><summary>Ver o cronograma semana a semana (13 semanas)</summary>
+        <table class="stab"><thead><tr><th>Sem.</th><th>Serviços</th><th>Materiais que o hotel já precisa ter comprado</th></tr></thead><tbody id="semanas"></tbody></table>
+      </details>
     </div>
 
     <!-- 2. Materiais -->
@@ -656,8 +714,14 @@ footer b{color:var(--ouro-2);font-family:var(--serif);font-size:1.1rem;letter-sp
           <li><svg><use href="#i-check"/></svg>Pedreiros, ajudantes e eletricista da casa de máquinas</li>
           <li><svg><use href="#i-check"/></svg>Engenheiro responsável e administração da obra</li>
         </ul>
-        <p style="font-size:.84rem;color:var(--cinza);margin-top:14px"><b>Por conta do hotel:</b></p>
-        <div class="nao-inc"><span>Hospedagem da equipe</span><span>Alimentação</span><span>Transporte</span><span>Materiais</span></div>
+        <p style="font-size:.84rem;color:var(--cinza);margin-top:18px"><b>O que o hotel providencia:</b></p>
+        <ul class="check">
+          <li>Compra dos materiais, seguindo as datas do cronograma</li>
+          <li>Hospedagem, alimentação e transporte da equipe</li>
+          <li>Energia (padrão de entrada) até a casa de máquinas e ponto de água</li>
+          <li>Acesso para máquinas e área de canteiro isolada dos hóspedes</li>
+          <li>Informações sobre redes enterradas e consulta à Prefeitura sobre alvará</li>
+        </ul>
       </div>
       <div class="card revela">
         <div class="bloco-tit"><h3 style="font-size:1.7rem">Pagamento em 3 etapas</h3><p>A mão de obra acompanha o andamento da obra.</p></div>
@@ -678,6 +742,11 @@ footer b{color:var(--ouro-2);font-family:var(--serif);font-size:1.1rem;letter-sp
         <div class="linha-r total"><span>Investimento total previsto</span><b class="js-brl" data-v="665758.9"></b></div>
         <div class="nota">Previsão de referência, não preço fechado. Valores, etapas e escopo são ajustados com o senhor antes do contrato. Dá para fazer por etapas ou rever materiais.</div>
       </div>
+      <div class="downloads">
+        <a class="btn btn-verde" href="Planilha-Previsao-Orcamentaria-Hotel-Wall-Way.xlsx" download><svg><use href="#i-pdf"/></svg>Baixar a planilha completa (Excel)</a>
+        <a class="btn btn-linha" href="Proposta-Magnus-Paraiso-Hotel-Wall-Way.pdf" download><svg><use href="#i-pdf"/></svg>Baixar a proposta em PDF</a>
+      </div>
+      <p style="font-size:.8rem;color:var(--cinza);margin-top:10px">Na planilha, cada material vem com quantidade e preço de referência, e há uma coluna para o senhor lançar as cotações dos seus fornecedores. O total recalcula sozinho.</p>
     </div>
 
     <!-- 5. Retorno -->
@@ -699,7 +768,7 @@ footer b{color:var(--ouro-2);font-family:var(--serif);font-size:1.1rem;letter-sp
         <p style="color:#c3cec4">Dá para fazer por etapas, rever materiais ou mudar o escopo. Alexandre monta com o senhor o caminho que fizer mais sentido para o Wall Way.</p>
         <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:24px">
           <a class="btn btn-zap js-zap" href="#" target="_blank" rel="noopener"><svg><use href="#i-zap"/></svg>Falar no WhatsApp</a>
-          <a class="btn btn-linha" href="Proposta-Hotel-Wall-Way-Magnus-Paraiso.pdf" download><svg><use href="#i-pdf"/></svg>Baixar PDF</a>
+          <a class="btn btn-linha" href="Proposta-Magnus-Paraiso-Hotel-Wall-Way.pdf" download><svg><use href="#i-pdf"/></svg>Baixar PDF</a>
         </div>
       </div>
     </div>
@@ -781,7 +850,7 @@ footer b{color:var(--ouro-2);font-family:var(--serif);font-size:1.1rem;letter-sp
   <a href="#projeto" data-v="projeto" class="ativa"><svg><use href="#i-olho"/></svg>Projeto</a>
   <a href="#planejamento" data-v="planejamento"><svg><use href="#i-grafico"/></svg>Planejamento</a>
   <a href="#outros-projetos" data-v="outros-projetos"><svg><use href="#i-galeria"/></svg>Outros</a>
-  <a href="Proposta-Hotel-Wall-Way-Magnus-Paraiso.pdf" download><svg><use href="#i-pdf"/></svg>PDF</a>
+  <a href="Proposta-Magnus-Paraiso-Hotel-Wall-Way.pdf" download><svg><use href="#i-pdf"/></svg>PDF</a>
   <a class="zap js-zap" href="#" target="_blank" rel="noopener"><svg><use href="#i-zap"/></svg>WhatsApp</a>
 </nav>
 
@@ -811,8 +880,23 @@ document.querySelectorAll('.js-zap').forEach(a=>a.href=zap);
 document.querySelectorAll('.js-brl').forEach(e=>e.textContent=brl(+e.dataset.v));
 
 /* Materiais */
-const maxM=P.materiais[0][2];
-document.getElementById('mats').innerHTML=P.materiais.map(([ic,n,v,d])=>`<div class="mat"><span class="ic"><svg><use href="#${ic}"/></svg></span><div style="flex:1"><b>${n}</b><span>${d}</span><div class="peso"><i data-w="${(v/maxM*100).toFixed(1)}"></i></div><span class="val">${brl(v)}</span></div></div>`).join('');
+const brl2=v=>v.toLocaleString('pt-BR',{style:'currency',currency:'BRL'});
+const num=v=>v.toLocaleString('pt-BR',{maximumFractionDigits:2});
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+function desenhaMats(itensPorGrupo){
+  const maxM=P.materiais[0][2];
+  document.getElementById('mats').innerHTML=P.materiais.map(([ic,n,v,d])=>{
+    const its=itensPorGrupo[n]||[];
+    const tab=its.length?`<details><summary>Ver os ${its.length} itens</summary><table class="itab">${its.map(i=>`<tr><td>${esc(i.desc)}</td><td>${num(i.qt)} ${esc(i.un.toLowerCase())}</td><td>${i.pu?brl2(i.qt*i.pu):'<span class="cotar">a cotar</span>'}</td></tr>`).join('')}</table></details>`:'';
+    return `<div class="mat"><span class="ic"><svg><use href="#${ic}"/></svg></span><div style="flex:1;min-width:0"><b>${n}</b><span>${d}</span><div class="peso"><i data-w="${(v/maxM*100).toFixed(1)}"></i></div><span class="val">${brl(v)}</span>${tab}</div></div>`;
+  }).join('');
+}
+desenhaMats({});
+fetch('dados/orcamento.json').then(r=>r.json()).then(o=>{
+  const m={};o.grupos.forEach(g=>m[g.grupo]=g.itens);desenhaMats(m);
+  document.getElementById('semanas').innerHTML=o.cronograma.map(f=>`<tr class="fz"><td colspan="3">${esc(f.fase)} · pagamento de ${esc(f.pagamento)}</td></tr>`+f.semanas.map(s=>`<tr><td>${s[0]}</td><td>${esc(s[1])}</td><td>${esc(s[2]||'')}</td></tr>`).join('')).join('');
+  if(document.getElementById('v-planejamento').classList.contains('ativa')) setTimeout(animaMats,100);
+}).catch(()=>{});
 const animaMats=()=>document.querySelectorAll('#mats i').forEach(i=>i.style.width=i.dataset.w+'%');
 
 /* Abas */
