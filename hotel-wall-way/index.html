@@ -1,0 +1,889 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#183225">
+<title>Hotel Wall Way · Magnus Paraíso</title>
+<meta property="og:title" content="Hotel Wall Way: o olhar de Alexandre Magnus">
+<meta property="og:description" content="Onde todos viam um terreno vazio, Alexandre Magnus viu um paraíso. Projeto exclusivo para o Hotel Wall Way, em Poços de Caldas.">
+<meta property="og:image" content="img/depois-vista-frontal.jpg">
+<link rel="icon" href="img/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --verde:#183225; --verde-2:#20402f; --verde-3:#2c5640; --verde-4:#0f2218;
+  --ouro:#c9a24a; --ouro-2:#e3c578; --ouro-esc:#8f6f27;
+  --creme:#f6f1e6; --creme-2:#ece4d2; --tinta:#14231a; --cinza:#5d6b62;
+  --raio:18px; --sombra:0 18px 50px -20px rgba(10,25,15,.45);
+  --serif:'Cormorant Garamond',Georgia,serif; --sans:'Manrope',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);background:var(--creme);color:var(--tinta);line-height:1.6;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+.eyebrow{font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;font-weight:700;color:var(--ouro-esc)}
+.dark .eyebrow{color:var(--ouro-2)}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.05;letter-spacing:-.01em}
+h2{font-size:clamp(2.1rem,5vw,3.6rem);margin:.4em 0 .35em}
+h2 em,h3 em{font-style:italic;color:var(--ouro-esc)}
+.dark h2 em{color:var(--ouro-2)}
+h3{font-size:1.6rem}
+.lead{font-size:clamp(1.02rem,1.6vw,1.18rem);color:var(--cinza);max-width:62ch}
+.dark{background:var(--verde);color:var(--creme)}
+.dark .lead{color:#c9d3c8}
+section{padding:clamp(70px,10vw,130px) 0;position:relative}
+section[id]{scroll-margin-top:60px}
+.centro{text-align:center}.centro .lead{margin-inline:auto}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6em;padding:.95em 1.5em;border-radius:999px;font-weight:700;font-size:.95rem;text-decoration:none;border:0;cursor:pointer;transition:transform .2s,box-shadow .2s;font-family:var(--sans)}
+.btn:hover{transform:translateY(-2px)}
+.btn-ouro{background:linear-gradient(135deg,var(--ouro-2),var(--ouro));color:var(--verde);box-shadow:0 10px 30px -10px rgba(201,162,74,.8)}
+.btn-zap{background:#25d366;color:#05381b}
+.btn-linha{background:transparent;color:inherit;border:1.5px solid currentColor}
+.btn svg{width:20px;height:20px;flex:none}
+
+/* ---------- TOPO ---------- */
+.topo{position:fixed;inset:0 0 auto 0;z-index:50;transition:background .3s,box-shadow .3s}
+.topo.solido{background:rgba(24,50,37,.95);backdrop-filter:blur(10px);box-shadow:0 6px 30px -12px rgba(0,0,0,.5)}
+.topo .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
+.marca{display:flex;align-items:center;gap:12px;color:var(--creme);text-decoration:none}
+.marca img{width:44px;height:44px;border-radius:50%;object-fit:cover;border:1px solid rgba(227,197,120,.5)}
+.marca b{font-family:var(--serif);font-size:1.35rem;font-weight:600;letter-spacing:.04em;white-space:nowrap}
+.marca small{display:block;font-size:.62rem;letter-spacing:.25em;text-transform:uppercase;color:var(--ouro-2);margin-top:-2px}
+.abas{display:flex;gap:4px;background:rgba(255,255,255,.08);padding:5px;border-radius:999px}
+.abas a{color:var(--creme);text-decoration:none;font-size:.84rem;font-weight:600;padding:.55em 1.05em;border-radius:999px;transition:.2s;white-space:nowrap}
+.abas a.ativa{background:var(--ouro);color:var(--verde)}
+.topo .acoes{display:flex;gap:8px}
+.topo .acoes .btn{padding:.6em 1.05em;font-size:.8rem}
+@media(max-width:1080px){.topo .acoes .txt-zap{display:none}}
+@media(max-width:900px){.abas,.topo .acoes{display:none}}
+
+/* ---------- TAB BAR MOBILE ---------- */
+.tabbar{display:none}
+@media(max-width:900px){
+  .tabbar{display:grid;grid-template-columns:repeat(5,1fr);position:fixed;left:0;right:0;bottom:0;z-index:60;background:rgba(24,50,37,.97);backdrop-filter:blur(10px);padding:8px 4px calc(8px + env(safe-area-inset-bottom));border-top:1px solid rgba(227,197,120,.25)}
+  .tabbar a{display:flex;flex-direction:column;align-items:center;gap:3px;color:#b9c5bb;text-decoration:none;font-size:.62rem;font-weight:700;text-align:center;line-height:1.15}
+  .tabbar a svg{width:22px;height:22px}
+  .tabbar a.ativa{color:var(--ouro-2)}
+  .tabbar a.zap{color:#25d366}
+  body{padding-bottom:74px}
+}
+
+.view{display:none}
+.view.ativa{display:block;animation:entra .5s ease}
+@keyframes entra{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+/* ---------- ABERTURA: O OLHAR DO ARTISTA ---------- */
+.olhar{min-height:100svh;background:radial-gradient(ellipse at 70% 40%,#24432f,var(--verde-4) 70%);color:var(--creme);display:flex;align-items:center;padding:100px 0 60px;overflow:hidden}
+.olhar .wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(30px,5vw,70px);align-items:center;width:100%}
+.olhar .para{display:inline-flex;align-items:center;gap:10px;font-size:.72rem;letter-spacing:.26em;text-transform:uppercase;color:var(--ouro-2);font-weight:700}
+.olhar .para::before{content:"";width:30px;height:1px;background:var(--ouro-2)}
+.olhar h1{font-size:clamp(2.6rem,5.6vw,4.9rem);margin:.35em 0 .3em;position:relative;min-height:2.2em}
+.olhar h1 span{display:block;transition:opacity .9s ease,transform .9s ease}
+.olhar h1 .f2{position:absolute;inset:0;opacity:0;transform:translateY(14px)}
+.olhar h1 em{font-style:italic;color:var(--ouro-2)}
+.olhar .sub{font-size:clamp(1rem,1.6vw,1.18rem);color:#cfd9cf;max-width:46ch;opacity:0;transform:translateY(12px);transition:opacity .9s .5s,transform .9s .5s}
+.olhar .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px;opacity:0;transform:translateY(12px);transition:opacity .9s .9s,transform .9s .9s}
+.olhar.revelado h1 .f1{opacity:0;transform:translateY(-14px)}
+.olhar.revelado h1 .f2{opacity:1;transform:none}
+.olhar.revelado .sub,.olhar.revelado .ctas{opacity:1;transform:none}
+
+.cena{position:relative;aspect-ratio:4/3;border-radius:22px;overflow:hidden;box-shadow:0 40px 80px -30px rgba(0,0,0,.8),0 0 0 1px rgba(227,197,120,.25)}
+.cena img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.cena .ant{filter:saturate(.75) brightness(.92);animation:zoom 10s ease-out forwards}
+.cena .dep{clip-path:inset(0 100% 0 0);transition:clip-path 2.8s cubic-bezier(.65,0,.35,1);transform:scale(1.06)}
+.olhar.revelado .cena .dep{clip-path:inset(0 0 0 0);animation:zoom 9s ease-out forwards}
+@keyframes zoom{from{transform:scale(1.08)}to{transform:scale(1)}}
+.cena .feixe{position:absolute;top:0;bottom:0;left:0;width:3px;background:var(--ouro-2);box-shadow:0 0 30px 10px rgba(227,197,120,.55);opacity:0}
+.olhar.revelado .cena .feixe{animation:feixe 2.8s cubic-bezier(.65,0,.35,1) forwards}
+@keyframes feixe{0%{left:0;opacity:1}90%{opacity:1}100%{left:100%;opacity:0}}
+.cena .etq{position:absolute;left:16px;top:16px;padding:.45em .95em;border-radius:999px;font-size:.68rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;background:rgba(0,0,0,.6);color:#fff;transition:opacity .6s}
+.cena .etq.d{background:var(--ouro-2);color:var(--verde);opacity:0}
+.olhar.revelado .cena .etq.a{opacity:0}
+.olhar.revelado .cena .etq.d{opacity:1;transition-delay:2.2s}
+.rever{position:absolute;right:14px;bottom:14px;background:rgba(10,22,15,.7);color:var(--creme);border:1px solid rgba(227,197,120,.5);border-radius:999px;padding:.5em 1em;font:700 .72rem var(--sans);letter-spacing:.08em;cursor:pointer;opacity:0;transition:opacity .6s 3s}
+.olhar.revelado .rever{opacity:1}
+@media(max-width:900px){
+  .olhar{padding-top:86px;align-items:flex-start}
+  .olhar .wrap{grid-template-columns:1fr;gap:22px}
+  .olhar .cena{order:-1;margin:0 -20px;border-radius:0;aspect-ratio:4/3.3}
+  .olhar h1{font-size:2.45rem;min-height:2.3em}
+  .olhar .ctas .btn{flex:1 1 100%}
+}
+
+/* ---------- 3 OLHARES ---------- */
+.tres{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px}
+.olho{border-radius:var(--raio);overflow:hidden;background:#fff;box-shadow:0 14px 40px -24px rgba(10,25,15,.4)}
+.olho img{aspect-ratio:4/3;object-fit:cover;width:100%}
+.olho div{padding:20px 22px 24px}
+.olho small{font-size:.68rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--ouro-esc)}
+.olho b{display:block;font-family:var(--serif);font-size:1.55rem;line-height:1.15;margin:.25em 0 .35em}
+.olho p{font-size:.92rem;color:var(--cinza)}
+@media(max-width:860px){.tres{grid-template-columns:1fr}}
+
+/* ---------- ANTES/DEPOIS ARRASTÁVEL ---------- */
+.comparar{position:relative;border-radius:var(--raio);overflow:hidden;box-shadow:var(--sombra);aspect-ratio:16/11;user-select:none;touch-action:pan-y;cursor:ew-resize;background:#000}
+.comparar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
+.comparar .antes{clip-path:inset(0 calc(100% - var(--pos,50%)) 0 0)}
+.comparar .linha{position:absolute;top:0;bottom:0;left:var(--pos,50%);width:2px;background:var(--ouro-2);transform:translateX(-1px);pointer-events:none}
+.comparar .puxador{position:absolute;top:50%;left:var(--pos,50%);width:52px;height:52px;border-radius:50%;background:var(--ouro-2);transform:translate(-50%,-50%);display:grid;place-items:center;box-shadow:0 6px 24px rgba(0,0,0,.4);pointer-events:none;color:var(--verde)}
+.comparar .rot{position:absolute;top:14px;padding:.4em .9em;border-radius:999px;font-size:.66rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;pointer-events:none}
+.comparar .rot.a{left:14px;background:rgba(0,0,0,.6);color:#fff}
+.comparar .rot.d{right:14px;background:var(--ouro-2);color:var(--verde)}
+.dica{display:flex;align-items:center;gap:8px;margin-top:14px;font-size:.85rem;color:var(--cinza)}
+.dark .dica{color:#aebbb0}
+.ad-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(30px,5vw,70px);align-items:center}
+@media(max-width:860px){.ad-grid{grid-template-columns:1fr}}
+
+/* ---------- CONCEITO ---------- */
+.conceito-nome{font-family:var(--serif);font-size:clamp(2.6rem,7vw,5.4rem);line-height:1;font-weight:600;margin:.25em 0 .2em}
+.conceito-nome em{color:var(--ouro-2);font-style:italic}
+.pilares{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:46px}
+.pilar{background:var(--verde-2);border:1px solid rgba(227,197,120,.2);border-radius:16px;padding:22px 20px}
+.pilar svg{width:30px;height:30px;color:var(--ouro-2)}
+.pilar b{display:block;font-family:var(--serif);font-size:1.45rem;margin:.4em 0 .25em;color:var(--creme)}
+.pilar span{font-size:.88rem;color:#b9c5bb}
+@media(max-width:960px){.pilares{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.pilares{grid-template-columns:1fr}}
+
+/* ---------- JORNADA DO HÓSPEDE ---------- */
+.capitulos{display:grid;gap:clamp(56px,8vw,110px);margin-top:50px}
+.cap{display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(24px,4vw,60px);align-items:center}
+.cap:nth-child(even){grid-template-columns:.75fr 1.25fr}
+.cap:nth-child(even) .cap-img{order:2}
+.cap-img{position:relative;border-radius:var(--raio);overflow:hidden;box-shadow:var(--sombra);cursor:zoom-in}
+.cap-img img{width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform 1.2s ease}
+.cap-img:hover img{transform:scale(1.04)}
+.cap-hora{font-size:.72rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--ouro-esc)}
+.cap h3{font-size:clamp(1.8rem,3.4vw,2.6rem);margin:.3em 0 .4em}
+.cap p{color:var(--cinza)}
+.selo{display:inline-block;margin-top:16px;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.45em .9em;border-radius:999px;border:1px solid var(--ouro);color:var(--ouro-esc)}
+@media(max-width:860px){.cap,.cap:nth-child(even){grid-template-columns:1fr}.cap:nth-child(even) .cap-img{order:0}}
+
+/* ---------- PRÉVIA DA PÁGINA DE VENDAS DO HOTEL ---------- */
+.previa{display:grid;grid-template-columns:1fr;gap:40px;margin-top:46px;position:relative}
+.browser{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 40px 90px -30px rgba(0,0,0,.6);max-width:980px;margin:0 auto;width:100%}
+.browser .barra-nav{display:flex;align-items:center;gap:8px;padding:10px 14px;background:#e9e6df}
+.browser .barra-nav i{width:11px;height:11px;border-radius:50%;background:#d0cbc0}
+.browser .barra-nav span{flex:1;margin-left:10px;background:#fff;border-radius:8px;font-size:.72rem;color:#7a847d;padding:5px 12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.site{color:#fff;font-family:var(--sans)}
+.site-hero{position:relative;min-height:440px;display:flex;flex-direction:column;justify-content:space-between;background:url(img/conceito-entrada.jpg) center/cover}
+.site-hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,30,40,.55),rgba(0,30,40,.05) 40%,rgba(0,25,35,.85))}
+.site-nav,.site-txt{position:relative;z-index:1}
+.site-nav{display:flex;justify-content:space-between;align-items:center;padding:16px 24px;font-size:.74rem;font-weight:600}
+.site-nav b{font-family:var(--serif);font-size:1.3rem;letter-spacing:.12em}
+.site-nav nav{display:flex;gap:18px}
+.site-nav .res{background:#fff;color:#0b4050;padding:.5em 1em;border-radius:999px;font-weight:800}
+.site-txt{padding:0 28px 30px}
+.site-txt small{font-size:.66rem;letter-spacing:.3em;text-transform:uppercase;font-weight:700;opacity:.9}
+.site-txt h4{font-family:var(--serif);font-size:clamp(2rem,4.6vw,3.4rem);font-weight:600;line-height:1;margin:.2em 0 .25em}
+.site-txt p{font-size:.92rem;max-width:44ch;opacity:.92}
+.site-btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.site-btns span{padding:.7em 1.2em;border-radius:999px;font-size:.8rem;font-weight:800}
+.site-btns .s1{background:#3fc1c9;color:#04323a}.site-btns .s2{border:1.5px solid #fff}
+.site-faixa{display:grid;grid-template-columns:repeat(4,1fr);background:#0b3a45}
+.site-faixa div{padding:16px 14px;text-align:center;font-size:.74rem;font-weight:700;border-right:1px solid rgba(255,255,255,.1)}
+.site-faixa div:last-child{border:0}
+.site-faixa em{display:block;font-family:var(--serif);font-style:italic;font-size:1.25rem;font-weight:600;color:#9fe3e8}
+.site-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:18px;background:#f4f8f7;color:#163038}
+.site-cards figure{border-radius:12px;overflow:hidden;background:#fff}
+.site-cards img{aspect-ratio:4/3;object-fit:cover;width:100%}
+.site-cards figcaption{padding:10px 12px;font-size:.78rem}
+.site-cards figcaption b{display:block;font-size:.9rem}
+.celular{position:absolute;right:max(0px,calc(50% - 560px));bottom:-40px;width:210px;border-radius:30px;background:#111;padding:9px;box-shadow:0 30px 60px -20px rgba(0,0,0,.7)}
+.celular .tela{border-radius:22px;overflow:hidden;background:#fff;color:#111;font-size:.68rem}
+.celular .ig-top{display:flex;align-items:center;gap:7px;padding:9px 10px;font-weight:700}
+.celular .ig-top i{width:22px;height:22px;border-radius:50%;background:conic-gradient(#f9ce34,#ee2a7b,#6228d7,#f9ce34);display:block}
+.celular img{aspect-ratio:1/1;object-fit:cover;width:100%}
+.celular .ig-txt{padding:9px 10px 12px;line-height:1.4}
+.rotulo-previa{display:inline-flex;gap:8px;align-items:center;font-size:.74rem;font-weight:700;color:#aebbb0;margin-top:14px}
+@media(max-width:860px){
+  .celular{display:none}
+  .site-hero{min-height:360px}
+  .site-nav nav{display:none}
+  .site-faixa{grid-template-columns:1fr 1fr}
+  .site-cards{grid-template-columns:1fr 1fr}
+  .site-cards figure:last-child{display:none}
+}
+
+/* ---------- RESULTADOS ---------- */
+.resultados{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px}
+.resultado{background:#fff;border-radius:var(--raio);padding:28px;border:1px solid var(--creme-2)}
+.resultado .n{font-family:var(--serif);font-size:3rem;color:var(--ouro);line-height:1}
+.resultado b{display:block;font-family:var(--serif);font-size:1.6rem;margin:.2em 0 .3em}
+.resultado p{color:var(--cinza);font-size:.94rem}
+.resultado ul{list-style:none;margin-top:12px;font-size:.88rem}
+.resultado li{padding:5px 0 5px 22px;position:relative;border-top:1px dashed var(--creme-2)}
+.resultado li::before{content:"✦";position:absolute;left:0;color:var(--ouro)}
+@media(max-width:860px){.resultados{grid-template-columns:1fr}}
+
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:40px}
+.duo figure{position:relative;border-radius:var(--raio);overflow:hidden;cursor:zoom-in}
+.duo img{aspect-ratio:4/3;object-fit:cover;width:100%}
+.duo figcaption{position:absolute;left:14px;bottom:14px;background:rgba(10,22,15,.75);color:var(--creme);font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.45em .9em;border-radius:999px}
+@media(max-width:640px){.duo{grid-template-columns:1fr}}
+
+.ficha{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(30px,5vw,70px);align-items:center}
+.ficha .planta{background:#fff;border-radius:var(--raio);padding:14px;box-shadow:var(--sombra);cursor:zoom-in}
+.itens{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:28px}
+.item{background:#fff;border-radius:14px;padding:18px;border:1px solid var(--creme-2)}
+.item svg{width:28px;height:28px;color:var(--ouro-esc)}
+.item b{display:block;margin-top:8px;font-size:.98rem}
+.item span{font-size:.86rem;color:var(--cinza)}
+@media(max-width:860px){.ficha{grid-template-columns:1fr}}
+@media(max-width:480px){.itens{grid-template-columns:1fr}}
+
+.etapas{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:44px;counter-reset:e}
+.etapa{background:var(--verde-2);border:1px solid rgba(227,197,120,.18);border-radius:16px;padding:22px 18px;position:relative}
+.etapa::before{counter-increment:e;content:"0" counter(e);font-family:var(--serif);font-size:2.4rem;color:var(--ouro-2);display:block;line-height:1;margin-bottom:10px}
+.etapa b{display:block;color:var(--creme);margin-bottom:6px}
+.etapa span{font-size:.86rem;color:#b9c5bb}
+.etapa.agora{background:linear-gradient(160deg,#3a5a2f,var(--verde-2));border-color:var(--ouro)}
+.etapa.agora::after{content:"Você está aqui";position:absolute;top:14px;right:14px;font-size:.6rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;background:var(--ouro);color:var(--verde);padding:.3em .6em;border-radius:999px}
+@media(max-width:960px){.etapas{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.etapas{grid-template-columns:1fr}}
+
+.final{text-align:center;color:var(--creme);overflow:hidden}
+.final .bg{position:absolute;inset:0;background:url(img/conceito-noite-cascata.jpg) center/cover}
+.final::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(12,26,18,.55),rgba(12,26,18,.93))}
+.final .wrap{position:relative;z-index:2}
+.final h2{font-size:clamp(2.4rem,6vw,4.6rem);max-width:16ch;margin-inline:auto}
+.final .ctas{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:34px}
+.validade{display:inline-block;margin-top:26px;font-size:.8rem;color:#c7d1c8;border:1px dashed rgba(227,197,120,.5);padding:.6em 1.1em;border-radius:999px}
+
+/* ---------- PLANEJAMENTO ---------- */
+.pg-hero{padding-top:130px;padding-bottom:70px}
+.aviso{display:flex;gap:14px;align-items:flex-start;background:rgba(227,197,120,.12);border:1px solid rgba(227,197,120,.35);border-radius:14px;padding:16px 18px;margin-top:26px;max-width:780px}
+.aviso svg{width:24px;height:24px;flex:none;color:var(--ouro-2);margin-top:2px}
+.aviso p{font-size:.92rem;color:#dfe6dd}
+.passo-pg{display:flex;align-items:baseline;gap:14px;margin-bottom:6px}
+.passo-pg span{font-family:var(--serif);font-size:2.6rem;color:var(--ouro);line-height:1}
+.card{background:#fff;border-radius:var(--raio);padding:clamp(22px,3vw,32px);box-shadow:0 14px 40px -24px rgba(10,25,15,.35);border:1px solid var(--creme-2)}
+.bloco{margin-top:60px}
+.bloco-tit{margin-bottom:22px}
+.bloco-tit h3{font-size:clamp(1.8rem,3vw,2.4rem)}
+.bloco-tit p{color:var(--cinza);margin-top:6px;max-width:70ch}
+.duas{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+@media(max-width:860px){.duas{grid-template-columns:1fr}}
+
+.fases{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.fase{border-radius:14px;padding:20px;background:var(--creme);border-top:4px solid var(--ouro)}
+.fase .m{font-size:.72rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--ouro-esc)}
+.fase b{display:block;font-family:var(--serif);font-size:1.5rem;margin:.2em 0 .3em}
+.fase ul{list-style:none;font-size:.88rem;color:var(--cinza)}
+.fase li{padding:3px 0 3px 16px;position:relative}
+.fase li::before{content:"";position:absolute;left:0;top:11px;width:7px;height:7px;border-radius:50%;background:var(--ouro)}
+@media(max-width:760px){.fases{grid-template-columns:1fr}}
+
+.mats{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.mat{display:flex;gap:14px;align-items:flex-start;padding:16px;border-radius:14px;background:var(--creme);border:1px solid var(--creme-2)}
+.mat .ic{width:44px;height:44px;flex:none;border-radius:12px;background:var(--verde);color:var(--ouro-2);display:grid;place-items:center}
+.mat .ic svg{width:24px;height:24px}
+.mat b{display:block;font-size:.98rem}
+.mat span{font-size:.84rem;color:var(--cinza);display:block}
+.mat .peso{margin-top:8px;height:6px;background:var(--creme-2);border-radius:99px;overflow:hidden}
+.mat .peso i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--verde-3),var(--ouro));border-radius:99px;transition:width 1.2s cubic-bezier(.2,.8,.2,1)}
+.mat .val{font-size:.8rem;font-weight:700;color:var(--verde);margin-top:6px;display:block}
+@media(max-width:760px){.mats{grid-template-columns:1fr}}
+
+.mdo li{list-style:none;display:flex;gap:12px;padding:11px 0;border-bottom:1px solid var(--creme-2);font-size:.95rem}
+.mdo li:last-child{border:0}
+.mdo li svg{width:20px;height:20px;color:var(--ouro-esc);flex:none;margin-top:3px}
+.nao-inc{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.nao-inc span{font-size:.8rem;background:var(--creme);border:1px solid var(--creme-2);border-radius:999px;padding:.4em .9em}
+.parcelas{display:grid;gap:10px;margin-top:6px}
+.parc{display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;background:var(--creme);border-radius:12px;padding:12px 16px}
+.parc .pct{font-family:var(--serif);font-size:1.7rem;font-weight:700;color:var(--ouro-esc);min-width:56px}
+.parc b{display:block;font-size:.92rem}
+.parc span{font-size:.8rem;color:var(--cinza)}
+.parc .v{font-weight:700;white-space:nowrap;font-size:.9rem;color:var(--cinza)}
+@media(max-width:480px){.parc{grid-template-columns:auto 1fr}.parc .v{grid-column:2}}
+
+/* resumo final — discreto */
+.resumo-final{border-radius:var(--raio);border:1px solid var(--creme-2);background:#fff;overflow:hidden}
+.resumo-final .linha-r{display:flex;justify-content:space-between;gap:16px;padding:18px clamp(20px,3vw,30px);border-bottom:1px solid var(--creme-2);font-size:.96rem}
+.resumo-final .linha-r span{color:var(--cinza)}
+.resumo-final .linha-r b{white-space:nowrap;font-weight:700}
+.resumo-final .total{background:var(--verde);color:var(--creme);border:0;align-items:center}
+.resumo-final .total span{color:#c9d3c8}
+.resumo-final .total b{font-family:var(--serif);font-size:1.7rem;color:var(--ouro-2)}
+.resumo-final .nota{padding:14px clamp(20px,3vw,30px);font-size:.82rem;color:var(--cinza);background:var(--creme)}
+
+.sim .ctrl{margin:16px 0}
+.sim label{display:flex;justify-content:space-between;gap:10px;font-size:.9rem;font-weight:600;margin-bottom:6px}
+.sim label output{font-weight:800;color:var(--verde);white-space:nowrap}
+.sim input[type=range]{width:100%;accent-color:var(--ouro-esc);height:28px}
+.sim .res{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
+.sim .res div{background:var(--verde);color:var(--creme);border-radius:12px;padding:16px}
+.sim .res small{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:#b9c5bb;font-weight:700}
+.sim .res b{display:block;font-family:var(--serif);font-size:1.8rem;color:var(--ouro-2);line-height:1.15}
+.sim .nota{font-size:.78rem;color:var(--cinza);margin-top:12px}
+
+/* ---------- OUTROS PROJETOS ---------- */
+.proj{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(24px,4vw,56px);align-items:center;padding:clamp(40px,6vw,70px) 0;border-top:1px solid rgba(227,197,120,.18)}
+.proj:first-of-type{border-top:0}
+.proj:nth-of-type(even) .proj-vis{order:2}
+.proj .tipo{display:inline-block;font-size:.66rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;background:rgba(227,197,120,.15);color:var(--ouro-2);border:1px solid rgba(227,197,120,.35);padding:.4em .8em;border-radius:999px}
+.proj h3{font-size:clamp(2rem,3.6vw,2.8rem);margin:.35em 0 .1em}
+.proj .local{font-size:.82rem;color:#aebbb0;letter-spacing:.06em}
+.proj p{color:#c9d3c8;margin-top:14px}
+.proj .mini{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px}
+.proj .mini img{border-radius:12px;aspect-ratio:4/3;object-fit:cover;width:100%;cursor:zoom-in}
+.proj .comparar{aspect-ratio:4/3}
+@media(max-width:860px){.proj{grid-template-columns:1fr}.proj:nth-of-type(even) .proj-vis{order:0}}
+.portfolio{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:40px}
+.portfolio .comparar{aspect-ratio:4/3}
+@media(max-width:760px){.portfolio{grid-template-columns:1fr}}
+
+/* ---------- LIGHTBOX / FLUTUANTE ---------- */
+.lb{position:fixed;inset:0;z-index:100;background:rgba(6,14,9,.94);display:none;align-items:center;justify-content:center;padding:20px}
+.lb.on{display:flex}
+.lb img{max-height:86vh;border-radius:12px}
+.lb button{position:absolute;top:16px;right:16px;width:46px;height:46px;border-radius:50%;border:0;background:var(--ouro-2);color:var(--verde);font-size:1.4rem;cursor:pointer}
+.lb p{position:absolute;bottom:20px;left:20px;right:20px;text-align:center;color:var(--creme);font-size:.9rem}
+.zap-flut{position:fixed;right:20px;bottom:22px;z-index:55;width:60px;height:60px;border-radius:50%;background:#25d366;display:grid;place-items:center;animation:pulsa 2.6s infinite}
+.zap-flut svg{width:32px;height:32px;color:#fff}
+@keyframes pulsa{0%,100%{box-shadow:0 0 0 0 rgba(37,211,102,.55)}50%{box-shadow:0 0 0 14px rgba(37,211,102,0)}}
+@media(max-width:900px){.zap-flut{display:none}}
+.revela{opacity:0;transform:translateY(26px);transition:opacity .9s ease,transform .9s ease}
+.revela.vis{opacity:1;transform:none}
+footer{background:var(--verde-4);color:#8fa093;font-size:.8rem;padding:34px 0;text-align:center}
+footer b{color:var(--ouro-2);font-family:var(--serif);font-size:1.1rem;letter-spacing:.06em}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.revela{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute">
+  <symbol id="i-zap" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2Zm5.8 14.13c-.25.69-1.44 1.32-1.98 1.37-.51.05-.99.24-3.33-.69-2.81-1.11-4.6-3.97-4.74-4.16-.14-.18-1.13-1.5-1.13-2.87 0-1.37.72-2.04.97-2.32.25-.28.55-.35.74-.35h.53c.17 0 .4-.06.62.47.23.55.79 1.92.86 2.06.07.14.11.3.02.48-.09.18-.14.3-.28.46-.14.16-.29.36-.42.48-.14.14-.28.29-.12.57.16.28.72 1.19 1.55 1.93 1.07.95 1.97 1.25 2.25 1.39.28.14.44.12.6-.07.16-.19.69-.81.88-1.09.18-.28.37-.23.62-.14.25.09 1.6.76 1.88.9.28.14.46.21.53.32.07.12.07.67-.18 1.36Z"/></symbol>
+  <symbol id="i-pdf" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 3v12m0 0-4-4m4 4 4-4M5 21h14"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="m5 12 5 5L20 7"/></symbol>
+  <symbol id="i-seta" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M9 6 3 12l6 6M15 6l6 6-6 6"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 11v6M12 7.5v.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+  <symbol id="i-olho" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+  <symbol id="i-grafico" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></symbol>
+  <symbol id="i-galeria" viewBox="0 0 24 24"><rect x="3" y="3" width="8" height="8" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><rect x="13" y="3" width="8" height="8" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><rect x="3" y="13" width="8" height="8" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><rect x="13" y="13" width="8" height="8" rx="2" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+  <symbol id="i-agua" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M12 3s7 7.5 7 12a7 7 0 0 1-14 0c0-4.5 7-12 7-12Z"/></symbol>
+  <symbol id="i-rocha" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="m3 19 4-8 4 3 3-7 7 12z"/></symbol>
+  <symbol id="i-luz" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3Z"/></symbol>
+  <symbol id="i-folha" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M5 19c0-8 5-14 15-14 0 10-6 15-14 15M5 19l7-7"/></symbol>
+  <symbol id="i-ferro" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16M8 4v16M16 4v16"/></symbol>
+  <symbol id="i-cano" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M3 8h8a4 4 0 0 1 4 4v9M3 13h6a1 1 0 0 1 1 1v7M13 21h4"/></symbol>
+  <symbol id="i-pincel" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M4 4h12v6H4zM16 7h3v6h-7v3M10 16h4v5h-4z"/></symbol>
+  <symbol id="i-maq" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M3 17h11v-5H7l-2 3H3zM14 12l4-6 3 2M5 17a2 2 0 1 0 4 0M10 17a2 2 0 1 0 4 0"/></symbol>
+  <symbol id="i-madeira" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M3 6h18v4H3zM3 14h18v4H3z"/></symbol>
+  <symbol id="i-gente" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3" fill="none" stroke="currentColor" stroke-width="2"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M16 5a3 3 0 0 1 0 6M18 14c1.8.8 3 2.6 3 4.7"/></symbol>
+  <symbol id="i-moeda" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M15 9.5c-.5-1-1.6-1.5-3-1.5-1.7 0-3 .9-3 2s1.3 1.7 3 2 3 .9 3 2-1.3 2-3 2c-1.4 0-2.5-.5-3-1.5M12 6.5v11"/></symbol>
+  <symbol id="i-camera" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M3 8h4l2-3h6l2 3h4v12H3z"/><circle cx="12" cy="13" r="3.5" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+  <symbol id="i-estrela" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/></symbol>
+</svg>
+
+<header class="topo" id="topo">
+  <div class="wrap">
+    <a class="marca" href="#projeto"><img src="img/logo.jpg" alt=""><span><b>Magnus Paraíso</b><small>Alexandre Magnus</small></span></a>
+    <nav class="abas">
+      <a href="#projeto" data-v="projeto" class="ativa">O Projeto</a>
+      <a href="#planejamento" data-v="planejamento">Planejamento e Previsão Orçamentária</a>
+      <a href="#outros-projetos" data-v="outros-projetos">Outros Projetos</a>
+    </nav>
+    <div class="acoes">
+      <a class="btn btn-linha" style="color:var(--creme)" href="Proposta-Hotel-Wall-Way-Magnus-Paraiso.pdf" download><svg><use href="#i-pdf"/></svg>PDF</a>
+      <a class="btn btn-zap js-zap" href="#" target="_blank" rel="noopener"><svg><use href="#i-zap"/></svg><span class="txt-zap">Falar com Alexandre</span></a>
+    </div>
+  </div>
+</header>
+
+<!-- ============================ ABA 1 · O PROJETO ============================ -->
+<main class="view ativa" id="v-projeto">
+
+  <!-- 1. O olhar do artista: antes → transformação -->
+  <section class="olhar" id="olhar">
+    <div class="wrap">
+      <div>
+        <span class="para">Hotel Wall Way · Poços de Caldas</span>
+        <h1><span class="f1">Onde todos viam um terreno vazio…</span><span class="f2">Alexandre Magnus viu <em>um paraíso.</em></span></h1>
+        <p class="sub">Esse é o olhar do artista. Diante de um espaço sem vida, ele enxerga cascatas, uma praia, sombra e água cristalina. Enxerga também um hotel que entra em outro nível, com mais hóspedes, ticket maior e uma experiência de que todos vão falar.</p>
+        <div class="ctas">
+          <a class="btn btn-ouro" href="#o-olhar">Conhecer o projeto ↓</a>
+          <a class="btn btn-linha" href="#outros-projetos">Outros projetos</a>
+        </div>
+      </div>
+      <div class="cena" id="cena">
+        <img class="ant" src="img/antes-terreno.jpg" alt="A área do Hotel Wall Way hoje: terreno vazio">
+        <img class="dep" src="img/depois-vista-frontal.jpg" alt="A mesma área transformada no paraíso projetado por Alexandre Magnus">
+        <span class="feixe"></span>
+        <span class="etq a">Hoje</span><span class="etq d">O olhar do Alexandre</span>
+        <button class="rever" id="rever" type="button">↻ Ver de novo</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Três olhares -->
+  <section id="o-olhar">
+    <div class="wrap">
+      <div class="revela centro">
+        <span class="eyebrow">A arte de enxergar o que ainda não existe</span>
+        <h2>O mesmo lugar, <em>três olhares.</em></h2>
+        <p class="lead">Todo projeto da Magnus Paraíso começa assim: Alexandre visita o terreno, estuda o sol, a vista e o movimento das pessoas e desenha um destino.</p>
+      </div>
+      <div class="tres">
+        <article class="olho revela"><img src="img/antes-terreno.jpg" alt="Terreno atual" loading="lazy"><div><small>O que todos viam</small><b>Um terreno sem uso</b><p>Uma área privilegiada na frente do hotel, mas sem vida e sem propósito, que não gerava nenhum real.</p></div></article>
+        <article class="olho revela"><img src="img/planta-tecnica.jpg" alt="Projeto técnico da cascata" loading="lazy" style="object-fit:contain;background:#fff"><div><small>O que Alexandre viu</small><b>Uma obra de arte viva</b><p>Uma cascata em três quedas, rochas esculpidas à mão, piscina praia, quiosques e luz cênica, tudo projetado com engenharia.</p></div></article>
+        <article class="olho revela"><img src="img/conceito-bar-molhado.jpg" alt="Hóspedes no bar molhado" loading="lazy"><div><small>O que o hotel vai viver</small><b>Um destino que vende sozinho</b><p>Hóspedes que ficam mais, consomem mais, fotografam e voltam. O Wall Way passa a ser lembrado por esse lugar.</p></div></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Comparador -->
+  <section class="dark">
+    <div class="wrap ad-grid">
+      <div class="revela">
+        <span class="eyebrow">Compare você mesmo</span>
+        <h2>Arraste e veja <em>a virada.</em></h2>
+        <p class="lead">À esquerda, a área como está hoje. À direita, a área depois do projeto, com a cascata em três quedas sobre a piscina praia, o paisagismo tropical e a integração total com a fachada do hotel.</p>
+        <div class="dica"><svg width="18" height="18"><use href="#i-seta"/></svg>Deslize a linha dourada para os lados</div>
+      </div>
+      <div class="comparar revela" data-comparar id="comp1">
+        <img src="img/depois-vista-frontal.jpg" alt="Conceito Magnus Paraíso para a área">
+        <img class="antes" src="img/antes-terreno.jpg" alt="Área atual do Hotel Wall Way">
+        <span class="rot a">Hoje</span><span class="rot d">O seu paraíso</span>
+        <span class="linha"></span><span class="puxador"><svg width="22" height="22"><use href="#i-seta"/></svg></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. O conceito que vai vender -->
+  <section class="dark" style="background:var(--verde-4)">
+    <div class="wrap">
+      <div class="revela">
+        <span class="eyebrow">O novo conceito do seu hotel</span>
+        <p class="conceito-nome">A praia de <em>Poços de Caldas.</em></p>
+        <p class="lead">Poços já é famosa pelas águas. Faltava um lugar onde o visitante pudesse viver isso como num resort de praia: pé na areia, cascata caindo, drinque na mão, no meio da serra. É esse lugar que o Wall Way vai ter, e é isso que o hotel vai vender.</p>
+      </div>
+      <div class="pilares revela">
+        <div class="pilar"><svg><use href="#i-agua"/></svg><b>Experiência</b><span>Piscina praia, cascatas e bar molhado, uma sensação de férias desde a chegada</span></div>
+        <div class="pilar"><svg><use href="#i-gente"/></svg><b>Mais clientes</b><span>Day use, eventos e famílias da região, um público novo além dos hóspedes</span></div>
+        <div class="pilar"><svg><use href="#i-moeda"/></svg><b>Ticket maior</b><span>Diária premium, consumo no bar e pacotes de experiência</span></div>
+        <div class="pilar"><svg><use href="#i-camera"/></svg><b>Cartão-postal</b><span>Cada hóspede vira divulgador: o projeto é feito para ser fotografado</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Jornada do hóspede -->
+  <section>
+    <div class="wrap">
+      <div class="revela">
+        <span class="eyebrow">Pelos olhos do seu hóspede</span>
+        <h2>Um dia no <em>Wall Way.</em></h2>
+        <p class="lead">É assim que o cliente do hotel vai viver o projeto. Toque nas imagens para ampliar.</p>
+      </div>
+      <div class="capitulos">
+        <article class="cap revela">
+          <div class="cap-img" data-zoom><img src="img/conceito-rua.jpg" alt="Vista do projeto a partir da avenida" loading="lazy"></div>
+          <div><span class="cap-hora">Chegando</span><h3>“Que lugar é esse?”</h3><p>Ainda na avenida, ele vê a água caindo entre as rochas e as palmeiras. O hotel ganha uma vitrine que nenhum outdoor consegue imitar.</p><span class="selo">Vitrine para a cidade</span></div>
+        </article>
+        <article class="cap revela">
+          <div class="cap-img" data-zoom><img src="img/conceito-entrada.jpg" alt="Cascata de entrada" loading="lazy"></div>
+          <div><span class="cap-hora">Manhã</span><h3>A primeira foto da viagem</h3><p>Na entrada, a cascata principal emoldurada por flores tropicais. É a imagem que ele vai postar e que vai trazer o próximo hóspede.</p><span class="selo">Marketing espontâneo</span></div>
+        </article>
+        <article class="cap revela">
+          <div class="cap-img" data-zoom><img src="img/conceito-aereo.jpg" alt="Piscina praia vista do alto" loading="lazy"></div>
+          <div><span class="cap-hora">Meio-dia</span><h3>Pé na areia, no meio da serra</h3><p>A piscina tem entrada rasa como uma prainha e bordas orgânicas. As crianças brincam no raso e os adultos relaxam sob a queda d'água.</p><span class="selo">Piscina praia</span></div>
+        </article>
+        <article class="cap revela">
+          <div class="cap-img" data-zoom><img src="img/conceito-bar-molhado.jpg" alt="Bar molhado sob o sapê" loading="lazy"></div>
+          <div><span class="cap-hora">Tarde</span><h3>Um drinque sem sair da água</h3><p>Ele senta no banco de pedra dentro d'água, à sombra do sapê. Fica mais tempo e consome mais, e o ticket médio sobe naturalmente.</p><span class="selo">Bar molhado · receita</span></div>
+        </article>
+        <article class="cap revela">
+          <div class="cap-img" data-zoom><img src="img/conceito-noite-fachada.jpg" alt="O paraíso iluminado à noite" loading="lazy"></div>
+          <div><span class="cap-hora">Noite</span><h3>O paraíso acende</h3><p>A iluminação subaquática e paisagística transforma tudo em cenário. É o melhor momento para jantares, eventos e fotos.</p><span class="selo">Cartão-postal noturno</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Prévia da página de vendas do hotel -->
+  <section class="dark" style="overflow:hidden">
+    <div class="wrap">
+      <div class="revela centro">
+        <span class="eyebrow">Uma prévia do futuro</span>
+        <h2>Imagine o Wall Way <em>vendendo assim.</em></h2>
+        <p class="lead">Depois de pronto, este é o tipo de página e de post que o hotel vai poder publicar. O paraíso vira o argumento de venda.</p>
+      </div>
+      <div class="previa revela">
+        <div class="browser">
+          <div class="barra-nav"><i></i><i></i><i></i><span>hotelwallway.com.br</span></div>
+          <div class="site">
+            <div class="site-hero">
+              <div class="site-nav"><b>WALL WAY</b><nav><span>Hospedagem</span><span>Day use</span><span>O Paraíso</span><span>Eventos</span></nav><span class="res">Reservar</span></div>
+              <div class="site-txt">
+                <small>Hotel Wall Way · Poços de Caldas</small>
+                <h4>A praia de Poços de Caldas.</h4>
+                <p>Piscina praia, cascatas em rocha natural e bar molhado. Venha passar o dia ou fique para dormir no paraíso.</p>
+                <div class="site-btns"><span class="s1">Comprar day use</span><span class="s2">Reservar diária</span></div>
+              </div>
+            </div>
+            <div class="site-faixa"><div><em>Piscina</em>praia</div><div><em>Cascatas</em>iluminadas</div><div><em>Bar</em>molhado</div><div><em>Quiosques</em>e mirante</div></div>
+            <div class="site-cards">
+              <figure><img src="img/conceito-prainha.jpg" alt="" loading="lazy"><figcaption><b>Day use em família</b>Prainha, sol e cascata</figcaption></figure>
+              <figure><img src="img/conceito-mirante-2.jpg" alt="" loading="lazy"><figcaption><b>Pôr do sol no mirante</b>Experiência para casais</figcaption></figure>
+              <figure><img src="img/conceito-noite-cascata.jpg" alt="" loading="lazy"><figcaption><b>Noites no paraíso</b>Eventos e jantares</figcaption></figure>
+            </div>
+          </div>
+        </div>
+        <div class="celular">
+          <div class="tela">
+            <div class="ig-top"><i></i>hotelwallway</div>
+            <img src="img/conceito-noite-rua.jpg" alt="" loading="lazy">
+            <div class="ig-txt"><b>hotelwallway</b> Nosso paraíso acendeu ✨ A praia de Poços de Caldas agora também à noite. Day use e diárias pelo link da bio.</div>
+          </div>
+        </div>
+      </div>
+      <div class="centro"><span class="rotulo-previa"><svg width="16" height="16"><use href="#i-info"/></svg>Prévia ilustrativa, criada para visualizar o potencial do projeto</span></div>
+    </div>
+  </section>
+
+  <!-- 7. Como o negócio prospera -->
+  <section>
+    <div class="wrap">
+      <div class="revela">
+        <span class="eyebrow">O que muda no negócio</span>
+        <h2>O paraíso não é custo. <em>É o que passa a vender.</em></h2>
+        <p class="lead">Alexandre cria para que o empreendimento prospere. Um projeto assim muda a forma como o hotel é visto, procurado e pago.</p>
+      </div>
+      <div class="resultados">
+        <div class="resultado revela"><span class="n">01</span><b>Mais clientes</b><p>O hotel passa a atrair quem não viria só pela hospedagem.</p><ul><li>Day use nos fins de semana</li><li>Aniversários, casamentos e eventos</li><li>Famílias da região e turistas de passagem</li></ul></div>
+        <div class="resultado revela"><span class="n">02</span><b>Ticket médio maior</b><p>A experiência justifica um valor maior, e o hóspede paga com gosto.</p><ul><li>Diária com valor de resort</li><li>Consumo no bar molhado e nos quiosques</li><li>Pacotes de casal, família e datas especiais</li></ul></div>
+        <div class="resultado revela"><span class="n">03</span><b>Diferenciação total</b><p>Nenhum concorrente da região terá algo igual. O projeto é único e assinado.</p><ul><li>Referência visual na cidade</li><li>Divulgação espontânea nas redes</li><li>Mais valor percebido do imóvel</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. Técnica -->
+  <section class="dark" style="background:var(--verde-2)">
+    <div class="wrap ficha">
+      <div class="planta revela" data-zoom><img src="img/planta-tecnica.jpg" alt="Planta técnica da cascata: perspectiva, vista frontal, corte e casa de máquinas" loading="lazy"></div>
+      <div class="revela">
+        <span class="eyebrow">Por trás da beleza</span>
+        <h2>Arte com <em>projeto de engenharia.</em></h2>
+        <p class="lead">A cascata do Wall Way já tem projeto técnico, com perspectiva, vista frontal, corte lateral, planta baixa e casa de máquinas. As quedas, as alturas e as larguras estão dimensionadas.</p>
+        <div class="itens">
+          <div class="item"><svg><use href="#i-rocha"/></svg><b>Rochas artísticas</b><span>Esculpidas à mão pelos artesãos da Magnus</span></div>
+          <div class="item"><svg><use href="#i-agua"/></svg><b>Hidráulica dimensionada</b><span>Bomba de 15 CV, filtros e tubulação PBS</span></div>
+          <div class="item"><svg><use href="#i-luz"/></svg><b>Iluminação cênica</b><span>40 pontos externos e subaquáticos</span></div>
+          <div class="item"><svg><use href="#i-folha"/></svg><b>Paisagismo tropical</b><span>Palmeiras, helicônias e bromélias</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. Método -->
+  <section class="dark">
+    <div class="wrap">
+      <div class="revela">
+        <span class="eyebrow">Como construímos o seu paraíso</span>
+        <h2>Done With You: <em>fazemos com você.</em></h2>
+        <p class="lead">A Magnus cuida da criação, da direção artística, da mão de obra especializada e da supervisão técnica. O hotel compra os materiais direto dos próprios fornecedores, com transparência total.</p>
+      </div>
+      <div class="etapas revela">
+        <div class="etapa"><b>Imersão no local</b><span>Levantamento da área, do solo e do potencial do terreno.</span></div>
+        <div class="etapa"><b>Criação artística</b><span>Alexandre desenha um paraíso único para o perfil do hotel.</span></div>
+        <div class="etapa"><b>Projeto completo</b><span>Estrutura, hidráulica, elétrica e prévia do paisagismo.</span></div>
+        <div class="etapa agora"><b>Apresentação</b><span>Você vê o seu paraíso antes de ele existir.</span></div>
+        <div class="etapa"><b>Execução</b><span>Cerca de 90 dias de obra com direção do artista.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="final">
+    <div class="bg"></div>
+    <div class="wrap revela">
+      <span class="eyebrow">Próximo passo</span>
+      <h2>Vamos levar o Wall Way a outro nível?</h2>
+      <p class="lead" style="margin:0 auto;color:#dfe6dd">Veja o planejamento e a previsão orçamentária, ou fale direto com Alexandre para ajustar o projeto ao seu momento.</p>
+      <div class="ctas">
+        <a class="btn btn-ouro" href="#planejamento">Planejamento e previsão orçamentária</a>
+        <a class="btn btn-zap js-zap" href="#" target="_blank" rel="noopener"><svg><use href="#i-zap"/></svg>Conversar no WhatsApp</a>
+        <a class="btn btn-linha" style="color:var(--creme)" href="Proposta-Hotel-Wall-Way-Magnus-Paraiso.pdf" download><svg><use href="#i-pdf"/></svg>Baixar proposta em PDF</a>
+      </div>
+      <span class="validade">Proposta válida por 15 dias</span>
+    </div>
+  </section>
+</main>
+
+<!-- ======================= ABA 2 · PLANEJAMENTO E PREVISÃO ======================= -->
+<main class="view" id="v-planejamento">
+  <section class="dark pg-hero">
+    <div class="wrap">
+      <span class="eyebrow">Hotel Wall Way · Magnus Paraíso</span>
+      <h2>Planejamento e <em>previsão orçamentária.</em></h2>
+      <p class="lead">Como o paraíso vai ser construído, o que entra em cada etapa e onde vai cada parte do investimento. É uma previsão para o senhor planejar com tranquilidade, e tudo é ajustado junto antes do contrato.</p>
+      <div class="aviso"><svg><use href="#i-info"/></svg><p>No modelo <b>Done With You</b>, a Magnus cuida da arte, da técnica e da equipe especializada. O hotel compra os materiais direto, com os próprios fornecedores e pelo próprio preço, com total controle do investimento.</p></div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <!-- 1. Cronograma -->
+    <div class="bloco card revela">
+      <div class="bloco-tit"><div class="passo-pg"><span>1</span><h3>O planejamento da obra</h3></div><p>Cerca de 90 dias, do terreno ao paraíso, em três grandes fases.</p></div>
+      <div class="fases">
+        <div class="fase"><span class="m">Mês 1</span><b>Base e estrutura</b><ul><li>Mobilização da equipe</li><li>Escavação e marcação do desenho</li><li>Ferragens, concreto e hidráulica</li></ul></div>
+        <div class="fase"><span class="m">Mês 2</span><b>As rochas ganham vida</b><ul><li>Escultura das rochas artísticas</li><li>Cascatas e quedas d'água</li><li>Quiosques e bar molhado</li></ul></div>
+        <div class="fase"><span class="m">Mês 3</span><b>Acabamento e luz</b><ul><li>Pintura e impermeabilização</li><li>Iluminação e casa de máquinas</li><li>Paisagismo e entrega</li></ul></div>
+      </div>
+    </div>
+
+    <!-- 2. Materiais -->
+    <div class="bloco card revela">
+      <div class="bloco-tit"><div class="passo-pg"><span>2</span><h3>Os principais materiais</h3></div><p>O que vai ser usado para construir o paraíso, em ordem de peso no investimento. A relação completa, item a item, está no PDF.</p></div>
+      <div class="mats" id="mats"></div>
+      <p style="font-size:.8rem;color:var(--cinza);margin-top:16px">Quantitativos de referência, que podem ser ajustados durante a execução conforme as condições de campo, para garantir a melhor performance estética, hidráulica e operacional. Os preços ficam a cargo dos fornecedores do hotel.</p>
+    </div>
+
+    <!-- 3. Mão de obra -->
+    <div class="bloco duas">
+      <div class="card revela">
+        <div class="bloco-tit"><div class="passo-pg"><span>3</span><h3>A mão de obra especializada</h3></div></div>
+        <ul class="mdo">
+          <li><svg><use href="#i-check"/></svg>Criação do conceito e direção artística de Alexandre Magnus</li>
+          <li><svg><use href="#i-check"/></svg>Supervisão técnica em todas as etapas da obra</li>
+          <li><svg><use href="#i-check"/></svg>Artesãos especialistas em rocha artística</li>
+          <li><svg><use href="#i-check"/></svg>Pedreiros, ajudantes e eletricista da casa de máquinas</li>
+          <li><svg><use href="#i-check"/></svg>Engenheiro responsável e administração da obra</li>
+        </ul>
+        <p style="font-size:.84rem;color:var(--cinza);margin-top:14px"><b>Por conta do hotel:</b></p>
+        <div class="nao-inc"><span>Hospedagem da equipe</span><span>Alimentação</span><span>Transporte</span><span>Materiais</span></div>
+      </div>
+      <div class="card revela">
+        <div class="bloco-tit"><h3 style="font-size:1.7rem">Pagamento em 3 etapas</h3><p>A mão de obra acompanha o andamento da obra.</p></div>
+        <div class="parcelas">
+          <div class="parc"><span class="pct">35%</span><div><b>Na assinatura do contrato</b><span>Mobilização da equipe</span></div><span class="v js-brl" data-v="110775"></span></div>
+          <div class="parc"><span class="pct">35%</span><div><b>Com 30 dias</b><span>Mediante execução</span></div><span class="v js-brl" data-v="110775"></span></div>
+          <div class="parc"><span class="pct">30%</span><div><b>Na entrega</b><span>Paraíso pronto</span></div><span class="v js-brl" data-v="94950"></span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. Investimento final (discreto) -->
+    <div class="bloco revela">
+      <div class="bloco-tit"><div class="passo-pg"><span>4</span><h3>A previsão do investimento</h3></div><p>A soma do que foi apresentado acima.</p></div>
+      <div class="resumo-final">
+        <div class="linha-r"><span>Materiais e equipamentos (estimativa, comprados pelo hotel)</span><b class="js-brl" data-v="349258.9"></b></div>
+        <div class="linha-r"><span>Mão de obra especializada, direção artística e supervisão (Magnus Paraíso)</span><b class="js-brl" data-v="316500"></b></div>
+        <div class="linha-r total"><span>Investimento total previsto</span><b class="js-brl" data-v="665758.9"></b></div>
+        <div class="nota">Previsão de referência, não preço fechado. Valores, etapas e escopo são ajustados com o senhor antes do contrato. Dá para fazer por etapas ou rever materiais.</div>
+      </div>
+    </div>
+
+    <!-- 5. Retorno -->
+    <div class="bloco duas" style="margin-bottom:90px">
+      <div class="card sim revela">
+        <span class="eyebrow">E o retorno?</span>
+        <h3 style="margin:.3em 0 .2em">Simule com os números do Wall Way</h3>
+        <p style="font-size:.88rem;color:var(--cinza)">Uma conta simples para enxergar o potencial. Ajuste à sua realidade.</p>
+        <div class="ctrl"><label>Visitantes de day use por mês <output id="o-vis"></output></label><input type="range" id="r-vis" min="0" max="1500" step="50" value="400"></div>
+        <div class="ctrl"><label>Ticket do day use <output id="o-tic"></output></label><input type="range" id="r-tic" min="50" max="300" step="10" value="120"></div>
+        <div class="ctrl"><label>Aumento na diária média (por noite) <output id="o-dia"></output></label><input type="range" id="r-dia" min="0" max="150" step="5" value="30"></div>
+        <div class="ctrl"><label>Diárias vendidas por mês <output id="o-noi"></output></label><input type="range" id="r-noi" min="0" max="2000" step="50" value="600"></div>
+        <div class="res"><div><small>Receita extra / mês</small><b id="s-mes">–</b></div><div><small>Investimento se paga em</small><b id="s-pay">–</b></div></div>
+        <p class="nota">Simulação ilustrativa com os valores escolhidos acima, sem custos operacionais. Não é promessa de faturamento.</p>
+      </div>
+      <div class="card revela" style="background:var(--verde);color:var(--creme);display:flex;flex-direction:column;justify-content:center;border-color:var(--verde)">
+        <span class="eyebrow" style="color:var(--ouro-2)">Vamos conversar</span>
+        <h3 style="font-size:2.2rem;margin:.3em 0">Ajustamos o projeto ao seu momento.</h3>
+        <p style="color:#c3cec4">Dá para fazer por etapas, rever materiais ou mudar o escopo. Alexandre monta com o senhor o caminho que fizer mais sentido para o Wall Way.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:24px">
+          <a class="btn btn-zap js-zap" href="#" target="_blank" rel="noopener"><svg><use href="#i-zap"/></svg>Falar no WhatsApp</a>
+          <a class="btn btn-linha" href="Proposta-Hotel-Wall-Way-Magnus-Paraiso.pdf" download><svg><use href="#i-pdf"/></svg>Baixar PDF</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- ============================ ABA 3 · OUTROS PROJETOS ============================ -->
+<main class="view" id="v-outros-projetos">
+  <section class="dark pg-hero" style="padding-bottom:30px">
+    <div class="wrap">
+      <span class="eyebrow">Outros projetos</span>
+      <h2>Conheça outros paraísos de <em>Alexandre Magnus,</em> o Mago das Cascatas.</h2>
+      <p class="lead">Parques, clubes e residências: cada lugar com o seu conceito, sempre a partir do mesmo olhar. Arraste a linha dourada para ver o antes e o depois.</p>
+    </div>
+  </section>
+
+  <section class="dark" style="padding-top:20px">
+    <div class="wrap">
+      <article class="proj revela">
+        <div class="proj-vis">
+          <div class="comparar" data-comparar><img src="img/ref-aqua-depois.jpg" alt="Parque AquaMais: conceito"><img class="antes" src="img/ref-aqua-antes.jpg" alt="Parque AquaMais: área em obra"><span class="rot a">Antes</span><span class="rot d">O conceito</span><span class="linha"></span><span class="puxador"><svg width="22" height="22"><use href="#i-seta"/></svg></span></div>
+        </div>
+        <div>
+          <span class="tipo">Parque aquático · Projeto idealizado</span>
+          <h3>Parque AquaMais</h3>
+          <div class="local">Betim · MG</div>
+          <p>A piscina de ondas ganha bordas em rocha esculpida em vez de paredes de concreto, com cascatas aos pés do Cristo Redentor. Um ambiente aquático comum vira uma jornada imersiva, com a sensação de natureza intocada.</p>
+          <div class="mini"><img src="img/ref-aqua-2.jpg" alt="AquaMais: cascatas e Cristo" data-zoomimg loading="lazy"><img src="img/ref-aqua-3.jpg" alt="AquaMais: banhistas na nova borda" data-zoomimg loading="lazy"></div>
+        </div>
+      </article>
+
+      <article class="proj revela">
+        <div class="proj-vis">
+          <div class="comparar" data-comparar><img src="img/ref-teuto-depois.jpg" alt="Teuto Esporte Clube: conceito"><img class="antes" src="img/ref-teuto-antes.jpg" alt="Teuto Esporte Clube: área atual"><span class="rot a">Antes</span><span class="rot d">O conceito</span><span class="linha"></span><span class="puxador"><svg width="22" height="22"><use href="#i-seta"/></svg></span></div>
+        </div>
+        <div>
+          <span class="tipo">Clube · Projeto idealizado</span>
+          <h3>Teuto Esporte Clube</h3>
+          <div class="local">Betim · MG</div>
+          <p>Um terreno de mato vira um complexo de piscina praia com cascatas, deck e quiosques. O objetivo é atrair novos associados e elevar o consumo de alimentos e bebidas, com a sensação de um resort no Caribe sem sair de casa.</p>
+          <div class="mini"><img src="img/ref-teuto-2.jpg" alt="Teuto: cascatas" data-zoomimg loading="lazy"><img src="img/ref-teuto-3.jpg" alt="Teuto: deck e associados" data-zoomimg loading="lazy"></div>
+        </div>
+      </article>
+
+      <article class="proj revela">
+        <div class="proj-vis">
+          <div class="comparar" data-comparar><img src="img/ref-klivia-depois.jpg" alt="Residência em Nova Lima: conceito"><img class="antes" src="img/ref-klivia-antes.jpg" alt="Residência em Nova Lima: quintal atual"><span class="rot a">Antes</span><span class="rot d">O conceito</span><span class="linha"></span><span class="puxador"><svg width="22" height="22"><use href="#i-seta"/></svg></span></div>
+        </div>
+        <div>
+          <span class="tipo">Residência · Projeto idealizado</span>
+          <h3>Paraíso particular</h3>
+          <div class="local">Condomínio em Nova Lima · MG</div>
+          <p>Um canto esquecido do quintal vira uma cascata com piscina praia, um refúgio para a família de dia e um espetáculo de luz à noite, com opção de quiosque gourmet.</p>
+          <div class="mini"><img src="img/ref-klivia-2.jpg" alt="Nova Lima: cascata iluminada" data-zoomimg loading="lazy"><img src="img/ref-klivia-3.jpg" alt="Nova Lima: quiosque gourmet" data-zoomimg loading="lazy"></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="revela">
+        <span class="eyebrow">Obras já entregues</span>
+        <h2>Do papel <em>para a vida real.</em></h2>
+        <p class="lead">Estas são obras da Magnus Paraíso já executadas, com fotos reais de antes e depois. É esse o padrão que chega ao Wall Way.</p>
+      </div>
+      <div class="portfolio">
+        <div class="comparar revela" data-comparar><img src="img/obra-f1-depois.jpg" alt="Obra real depois"><img class="antes" src="img/obra-f1-antes.jpg" alt="Obra real antes"><span class="rot a">Antes</span><span class="rot d">Depois</span><span class="linha"></span><span class="puxador"><svg width="22" height="22"><use href="#i-seta"/></svg></span></div>
+        <div class="comparar revela" data-comparar><img src="img/obra-f4-depois.jpg" alt="Obra real depois"><img class="antes" src="img/obra-f4-antes.jpg" alt="Obra real antes"><span class="rot a">Antes</span><span class="rot d">Depois</span><span class="linha"></span><span class="puxador"><svg width="22" height="22"><use href="#i-seta"/></svg></span></div>
+      </div>
+      <div class="centro" style="margin-top:50px"><a class="btn btn-ouro" href="#projeto">Voltar ao projeto do Wall Way</a></div>
+    </div>
+  </section>
+</main>
+
+<footer><b>MAGNUS PARAÍSO</b><br>A arte de transformar espaços em paraísos únicos · Itaúna · MG<br>Proposta exclusiva para o Hotel Wall Way.</footer>
+
+<nav class="tabbar">
+  <a href="#projeto" data-v="projeto" class="ativa"><svg><use href="#i-olho"/></svg>Projeto</a>
+  <a href="#planejamento" data-v="planejamento"><svg><use href="#i-grafico"/></svg>Planejamento</a>
+  <a href="#outros-projetos" data-v="outros-projetos"><svg><use href="#i-galeria"/></svg>Outros</a>
+  <a href="Proposta-Hotel-Wall-Way-Magnus-Paraiso.pdf" download><svg><use href="#i-pdf"/></svg>PDF</a>
+  <a class="zap js-zap" href="#" target="_blank" rel="noopener"><svg><use href="#i-zap"/></svg>WhatsApp</a>
+</nav>
+
+<a class="zap-flut js-zap" href="#" target="_blank" rel="noopener" aria-label="Falar no WhatsApp"><svg><use href="#i-zap"/></svg></a>
+<div class="lb" id="lb"><button aria-label="Fechar">×</button><img alt=""><p></p></div>
+
+<script>
+const P = {
+  whatsapp:"5537998141991",
+  msg:"Olá, Alexandre! Vi o projeto do paraíso do Hotel Wall Way e quero conversar.",
+  investimento:665758.9,
+  materiais:[
+    ["i-luz","Elétrica, iluminação e bombas",130230,"Quadro de comando, 40 pontos de luz subaquática e externa, bomba de 15 CV"],
+    ["i-rocha","Alvenaria e estrutura das rochas",93440,"Cimento, concreto usinado, cimento branco e blocos para a escultura"],
+    ["i-folha","Paisagismo e jardinagem",40000,"Palmeiras e plantas tropicais"],
+    ["i-ferro","Ferragens",38610.9,"Barras, malhas e treliças da estrutura"],
+    ["i-cano","Hidráulica",23031,"Tubulação PBS, conexões, flanges e registros"],
+    ["i-pincel","Pintura e impermeabilização",8800,"Tinta de piso, Neutrol e impermeabilizante"],
+    ["i-maq","Máquinas e equipamentos",8520,"Retroescavadeira e betoneira"],
+    ["i-madeira","Madeiras e formas",6627,"Tábuas, pontaletes e chapas"]
+  ]
+};
+const VIEWS=['projeto','planejamento','outros-projetos'];
+const brl=v=>v.toLocaleString('pt-BR',{style:'currency',currency:'BRL',maximumFractionDigits:0});
+const zap=`https://wa.me/${P.whatsapp}?text=${encodeURIComponent(P.msg)}`;
+document.querySelectorAll('.js-zap').forEach(a=>a.href=zap);
+document.querySelectorAll('.js-brl').forEach(e=>e.textContent=brl(+e.dataset.v));
+
+/* Materiais */
+const maxM=P.materiais[0][2];
+document.getElementById('mats').innerHTML=P.materiais.map(([ic,n,v,d])=>`<div class="mat"><span class="ic"><svg><use href="#${ic}"/></svg></span><div style="flex:1"><b>${n}</b><span>${d}</span><div class="peso"><i data-w="${(v/maxM*100).toFixed(1)}"></i></div><span class="val">${brl(v)}</span></div></div>`).join('');
+const animaMats=()=>document.querySelectorAll('#mats i').forEach(i=>i.style.width=i.dataset.w+'%');
+
+/* Abas */
+function mostra(v,rolar=true){
+  if(!VIEWS.includes(v)) v='projeto';
+  document.querySelectorAll('.view').forEach(e=>e.classList.toggle('ativa',e.id==='v-'+v));
+  document.querySelectorAll('[data-v]').forEach(a=>a.classList.toggle('ativa',a.dataset.v===v));
+  if(rolar) window.scrollTo({top:0,behavior:'instant'});
+  if(v==='planejamento') setTimeout(animaMats,400);
+  if(v==='projeto') iniciaOlhar();
+  observa();
+}
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  const h=a.getAttribute('href').slice(1);
+  if(VIEWS.includes(h)) a.addEventListener('click',e=>{e.preventDefault();history.pushState(null,'','#'+h);mostra(h)});
+});
+addEventListener('popstate',()=>{const h=location.hash.slice(1);if(VIEWS.includes(h))mostra(h)});
+
+const topo=document.getElementById('topo');
+addEventListener('scroll',()=>topo.classList.toggle('solido',scrollY>40),{passive:true});
+
+/* Abertura: o olhar do artista */
+const olhar=document.getElementById('olhar');
+let tOlhar;
+function iniciaOlhar(){
+  clearTimeout(tOlhar);
+  olhar.classList.remove('revelado');
+  void olhar.offsetWidth;
+  tOlhar=setTimeout(()=>olhar.classList.add('revelado'),2200);
+}
+document.getElementById('rever').addEventListener('click',iniciaOlhar);
+
+/* Comparadores */
+document.querySelectorAll('[data-comparar]').forEach(c=>{
+  let ativo=false;
+  const set=x=>{const r=c.getBoundingClientRect();c.style.setProperty('--pos',Math.max(0,Math.min(100,(x-r.left)/r.width*100))+'%')};
+  c.addEventListener('pointerdown',e=>{ativo=true;c.setPointerCapture(e.pointerId);set(e.clientX)});
+  c.addEventListener('pointermove',e=>{if(ativo)set(e.clientX)});
+  c.addEventListener('pointerup',()=>ativo=false);
+  c.addEventListener('pointercancel',()=>ativo=false);
+});
+const comp1=document.getElementById('comp1');
+new IntersectionObserver((es,o)=>{es.forEach(e=>{if(e.isIntersecting){o.disconnect();let t=0;const anim=()=>{t+=0.02;comp1.style.setProperty('--pos',(50+38*Math.sin(t*2.2)*Math.exp(-t*0.6))+'%');if(t<4)requestAnimationFrame(anim)};anim()}})},{threshold:.6}).observe(comp1);
+
+/* Revelar ao rolar */
+let io;
+function observa(){
+  io&&io.disconnect();
+  io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target)}}),{threshold:.1});
+  document.querySelectorAll('.view.ativa .revela:not(.vis)').forEach(el=>io.observe(el));
+}
+
+/* Lightbox */
+const lb=document.getElementById('lb');
+const abre=i=>{lb.querySelector('img').src=i.src;lb.querySelector('p').textContent=i.alt;lb.classList.add('on')};
+document.querySelectorAll('[data-zoom]').forEach(f=>f.addEventListener('click',()=>abre(f.querySelector('img'))));
+document.querySelectorAll('[data-zoomimg]').forEach(i=>i.addEventListener('click',()=>abre(i)));
+lb.addEventListener('click',e=>{if(e.target!==lb.querySelector('img'))lb.classList.remove('on')});
+addEventListener('keydown',e=>{if(e.key==='Escape')lb.classList.remove('on')});
+
+/* Simulador */
+const $=id=>document.getElementById(id);
+function sim(){
+  const vis=+$('r-vis').value,tic=+$('r-tic').value,dia=+$('r-dia').value,noi=+$('r-noi').value;
+  $('o-vis').textContent=vis.toLocaleString('pt-BR');$('o-tic').textContent=brl(tic);$('o-dia').textContent=brl(dia);$('o-noi').textContent=noi.toLocaleString('pt-BR');
+  const mes=vis*tic+dia*noi;$('s-mes').textContent=brl(mes);
+  $('s-pay').textContent=mes>0?Math.ceil(P.investimento/mes)+' meses':'–';
+}
+['r-vis','r-tic','r-dia','r-noi'].forEach(id=>$(id).addEventListener('input',sim));sim();
+
+mostra(location.hash.slice(1),false);
+</script>
+</body>
+</html>
